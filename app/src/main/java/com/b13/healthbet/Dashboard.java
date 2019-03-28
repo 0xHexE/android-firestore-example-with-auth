@@ -99,13 +99,12 @@ public class Dashboard extends AppCompatActivity
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if (documentSnapshot.exists()) {
                             double bmi = documentSnapshot.getDouble("weight") / (documentSnapshot.getDouble("height") * documentSnapshot.getDouble("height"));
-                            bmiText.setText(Double.toString(bmi));
+                            bmiText.setText(" " + Double.toString(bmi) + " ");
                             ReturnDataType returnDataType = getHealthStatus(documentSnapshot.getString("gender"), documentSnapshot.getDouble("age"), bmi);
                             String healthStatusTxt = returnDataType.health_status;
-                            healthStatus.setText(healthStatusTxt);
-                            healthStatus.setText(" " + healthStatus.getText() + "weight");
+                            healthStatus.setText(" " + healthStatusTxt + "weight ");
                             final Double requiredCalaries = returnDataType.required_cal;
-                            totalCalaries.setText(requiredCalaries.toString());
+                            totalCalaries.setText(" " + requiredCalaries.toString() + " ");
                             Date d = new Date();
 
                             firestore.collection(getString(R.string.FirebaseCollections))
@@ -122,9 +121,9 @@ public class Dashboard extends AppCompatActivity
                                                 total += queryDocumentSnapshot.getDouble("value");
                                             }
 
-                                            todayCal.setText(total.toString());
+                                            todayCal.setText(" " + total.toString() + " ");
                                             double data = (requiredCalaries - total);
-                                            remaingCal.setText(Double.toString(data));
+                                            remaingCal.setText(" " + Double.toString(data) + " ");
                                         }
                                     });
 
