@@ -102,4 +102,9 @@
     <string name="remaining_calories">Remaining calories</string>
     <string name="calories">Calories</string>
     <string name="amount">Amount</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="test">Test</string>
 </resources>
