@@ -62,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
    * Head towards new activity
    */
   private void startNextActivityIfLoggedIn() {
-    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
     FirebaseAuth.getInstance().addAuthStateListener(new FirebaseAuth.AuthStateListener() {
       @Override
       public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
