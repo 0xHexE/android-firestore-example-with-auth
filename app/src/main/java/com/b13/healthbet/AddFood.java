@@ -31,7 +31,7 @@ import java.util.HashMap;
 public class AddFood extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String foodArray[];
 
-    HashMap<String, Double> foodCal = new HashMap<String, Double>();
+    HashMap<String, Double> foodCal = new HashMap<>();
 
     Double selectedFoodCal = (double) 0;
 
@@ -133,13 +133,6 @@ public class AddFood extends AppCompatActivity implements AdapterView.OnItemSele
                     }
                 });
     }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        bmiCalculator();
-        return super.onKeyDown(keyCode, event);
-    }
-
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
