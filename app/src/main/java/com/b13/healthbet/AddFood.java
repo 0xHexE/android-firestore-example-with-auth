@@ -49,6 +49,15 @@ public class AddFood extends AppCompatActivity implements AdapterView.OnItemSele
 
         foodCal.put("Mango", 10.00d);
         foodCal.put("Samosa", 103.00d);
+        foodCal.put("Dal", 300.00d);
+        foodCal.put("Milk", 60.00d);
+        foodCal.put("Paneer", 900.00d);
+        foodCal.put("Vegitable", 50.00d);
+        foodCal.put("Fruit", 70.00d);
+        foodCal.put("Meat", 200.00d);
+        foodCal.put("Nuts", 500.00d);
+        foodCal.put("Rice", 350.00d);
+        foodCal.put("Roti", 100.00d);
 
         foodArray = getResources().getStringArray(R.array.foods);
 

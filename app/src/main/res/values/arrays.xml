@@ -3,5 +3,14 @@
   <array name="foods">
     <item>Mango</item>
     <item>Samosa</item>
+    <item>Dal</item>
+    <item>Milk</item>
+    <item>Paneer</item>
+    <item>Vegitable</item>
+    <item>Fruit</item>
+    <item>Meat</item>
+    <item>Nuts</item>
+    <item>Rice</item>
+    <item>Roti</item>
   </array>
 </resources>
