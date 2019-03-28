@@ -98,12 +98,13 @@ public class Dashboard extends AppCompatActivity
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if (documentSnapshot.exists()) {
-                            double bmi = documentSnapshot.getDouble("weight") * 703 / (documentSnapshot.getDouble("height") * documentSnapshot.getDouble("height"));
+                            double bmi = documentSnapshot.getDouble("weight") / (documentSnapshot.getDouble("height") * documentSnapshot.getDouble("height"));
                             bmiText.setText(Double.toString(bmi));
-                            String healthStatusTxt = getHealthStatus(documentSnapshot.getString("gender"), documentSnapshot.getDouble("age"), bmi);
+                            ReturnDataType returnDataType = getHealthStatus(documentSnapshot.getString("gender"), documentSnapshot.getDouble("age"), bmi);
+                            String healthStatusTxt = returnDataType.health_status;
                             healthStatus.setText(healthStatusTxt);
                             healthStatus.setText(" " + healthStatus.getText() + "weight");
-                            final Double requiredCalaries = requiredCal(documentSnapshot.getString("gender"), documentSnapshot.getDouble("age"), healthStatusTxt);
+                            final Double requiredCalaries = returnDataType.required_cal;
                             totalCalaries.setText(requiredCalaries.toString());
                             Date d = new Date();
 
@@ -152,38 +153,83 @@ public class Dashboard extends AppCompatActivity
         return calendar.getTime();
     }
 
-    // TODO: STUB
-    private Double requiredCal(String gender, Double age, String healthStatus) {
-        return 2000d;
-    }
-
-    private String getHealthStatus(String gender, Double age, Double bmi) {
+    private ReturnDataType getHealthStatus(String gender, Double age, Double bmi) {
         switch (gender) {
             case "male":
-                // TODO: ADD PROPER STATUS
-                if (bmi < 10) {
-                    return "under";
-                }
-                if (bmi > 10 && bmi < 15) {
-                    return "normal";
-                }
-                if (bmi > 15) {
-                    return "over";
+                if (age <= 12) {
+                    if (bmi < 18.5) {
+                        return new ReturnDataType(2500d, "under");
+                    } else if (bmi > 18.5 && bmi < 24.9) {
+                        return new ReturnDataType(2000d, "normal");
+                    } else {
+                        return new ReturnDataType(1500d, "over");
+                    }
+                } else if (age >= 13 && age <= 30) {
+                    if (bmi < 18.5) {
+                        return new ReturnDataType(3000d, "under");
+                    } else if (bmi > 18.5 && bmi < 24.9) {
+                        return new ReturnDataType(2800d, "normal");
+                    } else {
+                        return new ReturnDataType(2500d, "over");
+                    }
+                } else if (age >= 31 && age <= 50) {
+                    if (bmi < 18.5) {
+                        return new ReturnDataType(3000d, "under");
+                    } else if (bmi > 18.5 && bmi < 24.9) {
+                        return new ReturnDataType(2600d, "normal");
+                    } else {
+                        return new ReturnDataType(2400d, "over");
+                    }
+                } else if (age > 50) {
+                    if (bmi < 18.5) {
+                        return new ReturnDataType(2800d, "under");
+                    } else if (bmi > 18.5 && bmi < 24.9) {
+                        return new ReturnDataType(2400d, "normal");
+                    } else {
+                        return new ReturnDataType(2200d, "over");
+                    }
                 }
                 break;
             case "female":
-                if (bmi < 10) {
-                    return "under";
-                }
-                if (bmi > 10 && bmi < 15) {
-                    return "normal";
-                }
-                if (bmi > 15) {
-                    return "over";
+                if (age <= 12) {
+                    if (bmi < 18.5) {
+                        return new ReturnDataType(2200d, "under");
+                    } else if (bmi > 18.5 && bmi < 24.9) {
+                        return new ReturnDataType(2000d, "normal");
+                    } else {
+                        return new ReturnDataType(1600d, "Over");
+                    }
+
+                } else if (age >= 13 && age <= 30) {
+                    if (bmi < 18.5) {
+                        return new ReturnDataType(2400d, "under");
+                    } else if (bmi > 18.5 && bmi < 24.9) {
+                        return new ReturnDataType(2200d, "normal");
+                    } else {
+                        return new ReturnDataType(2000d, "Over");
+                    }
+
+                } else if (age >= 31 && age <= 50) {
+                    if (bmi < 18.5) {
+                        return new ReturnDataType(2200d, "under");
+                    } else if (bmi > 18.5 && bmi < 24.9) {
+                        return new ReturnDataType(2000d, "normal");
+                    } else {
+                        return new ReturnDataType(2400d, "Over");
+                    }
+
+                } else if (age > 50) {
+                    if (bmi < 18.5) {
+                        return new ReturnDataType(2000d, "under");
+                    } else if (bmi > 18.5 && bmi < 24.9) {
+                        return new ReturnDataType(1800d, "normal");
+                    } else {
+                        return new ReturnDataType(1600d, "Over");
+                    }
                 }
                 break;
         }
-        return "normal";
+        return new ReturnDataType(0d, "unknown");
     }
 
     @Override
@@ -243,5 +289,15 @@ public class Dashboard extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+}
+
+class ReturnDataType {
+    public double required_cal;
+    public String health_status;
+
+    ReturnDataType(double required_cal, String health_status) {
+        this.health_status = health_status;
+        this.required_cal = required_cal;
     }
 }
