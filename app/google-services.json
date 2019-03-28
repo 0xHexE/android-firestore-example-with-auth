@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "952845567615",
+    "firebase_url": "https://healthbet-35641.firebaseio.com",
+    "project_id": "healthbet-35641",
+    "storage_bucket": "healthbet-35641.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:952845567615:android:361ee52dad5ea150",
+        "android_client_info": {
+          "package_name": "com.b13.healthbet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "952845567615-mt75d0ndv5ivu7pnk2r4dbsav6mddjgk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.b13.healthbet",
+            "certificate_hash": "fa4ca31ed883bce158d8f590817655b11d21439b"
+          }
+        },
+        {
+          "client_id": "952845567615-ibjfc3ejvrq5vlip0fom6qo9l6fgkt9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE1REwyCcClmWT_XkvUJ6wgdH2t96viPc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "952845567615-ibjfc3ejvrq5vlip0fom6qo9l6fgkt9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

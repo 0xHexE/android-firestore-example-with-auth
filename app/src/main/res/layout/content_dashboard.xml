@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16sp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Dashboard"
+    tools:showIn="@layout/app_bar_dashboard">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/body_status"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:layout_marginRight="8sp"
+                    android:text="@string/bmi"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+                <TextView
+                    android:id="@+id/bmiText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-4sp"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/calculating"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/healthStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-4sp"
+                android:layout_marginTop="8sp"
+                android:text="@string/calculating"
+                tools:layout_editor_absoluteX="36dp"
+                tools:layout_editor_absoluteY="229dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/total_calories"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+                <TextView
+                    android:id="@+id/totalCalaries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/calculating"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/kcal_you_have_to_eat"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/eaten_calories"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+                <TextView
+                    android:id="@+id/todayCal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/calculating"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/kcal_you_have_to_eat"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/remaining_calories"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+                <TextView
+                    android:id="@+id/remaingCal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/calculating"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8sp"
+                    android:text="@string/kcal_you_have_to_eat"
+                    tools:layout_editor_absoluteX="36dp"
+                    tools:layout_editor_absoluteY="229dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/report"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12sp"
+                android:layout_weight="1"
+                android:text="Report" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
