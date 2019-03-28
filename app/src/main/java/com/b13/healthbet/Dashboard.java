@@ -197,7 +197,7 @@ public class Dashboard extends AppCompatActivity
                     } else if (bmi > 18.5 && bmi < 24.9) {
                         return new ReturnDataType(2000d, "normal");
                     } else {
-                        return new ReturnDataType(1600d, "Over");
+                        return new ReturnDataType(1600d, "over");
                     }
 
                 } else if (age >= 13 && age <= 30) {
@@ -206,7 +206,7 @@ public class Dashboard extends AppCompatActivity
                     } else if (bmi > 18.5 && bmi < 24.9) {
                         return new ReturnDataType(2200d, "normal");
                     } else {
-                        return new ReturnDataType(2000d, "Over");
+                        return new ReturnDataType(2000d, "over");
                     }
 
                 } else if (age >= 31 && age <= 50) {
@@ -215,7 +215,7 @@ public class Dashboard extends AppCompatActivity
                     } else if (bmi > 18.5 && bmi < 24.9) {
                         return new ReturnDataType(2000d, "normal");
                     } else {
-                        return new ReturnDataType(2400d, "Over");
+                        return new ReturnDataType(2400d, "over");
                     }
 
                 } else if (age > 50) {
@@ -224,7 +224,7 @@ public class Dashboard extends AppCompatActivity
                     } else if (bmi > 18.5 && bmi < 24.9) {
                         return new ReturnDataType(1800d, "normal");
                     } else {
-                        return new ReturnDataType(1600d, "Over");
+                        return new ReturnDataType(1600d, "over");
                     }
                 }
                 break;
