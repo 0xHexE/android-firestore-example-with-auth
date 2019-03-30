@@ -90,6 +90,12 @@ public class AddFood extends AppCompatActivity implements AdapterView.OnItemSele
     }
 
     private void saveIt() {
+        if ( Double.parseDouble(amount.getText().toString()) > 100 ) {
+            Toast.makeText(this, "Please enter proper ammount", Toast.LENGTH_LONG)
+                    .show();
+            return;
+        }
+
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
 
         String uid = FirebaseAuth.getInstance().getUid();
